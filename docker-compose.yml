@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  erds_house:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - erds_house-network
+    restart:
+      always
+
+networks:
+  erds_house-network:
